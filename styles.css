@@ -1,0 +1,572 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0A2A6D; /* Dark blue background */
+    color: #fff;
+}
+
+header {
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker semi-transparent background */
+    padding: 20px;
+    z-index: 1000; /* Ensure it is on top of the slides */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between left and right content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+    border-bottom: 2px solid #00BFFF; /* Bottom border */
+}
+
+.logo-slide {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height for the slide */
+    background-color: white; /* White background for logo slide */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInZoom 1s forwards; /* Fade-in and zoom animation */
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.7); /* Start smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at original size */
+    }
+}
+
+.logo-image {
+    max-width: 40%; /* Smaller logo width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.totals-box {
+    text-align: right; /* Align totals to the right */
+    background: rgba(255, 255, 255, 0.1); /* Slightly white background for contrast */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background 0.3s, transform 0.3s; /* Transition for hover effect */
+}
+
+.totals-box:hover {
+    background: rgba(255, 255, 255, 0.2); /* Change background on hover */
+    transform: scale(1.02); /* Slightly scale up */
+}
+
+.totals-box h2 {
+    font-size: 1.2em; /* Maintain font size for totals */
+    margin: 5px 0; /* Add margin for spacing */
+    color: #FFD700; /* Gold color for visibility */
+}
+
+.totals-box span {
+    color: #00BFFF; /* Deep Sky Blue for total numbers */
+    font-weight: bold; /* Make numbers bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+#slideshow-container {
+    margin-top: 0; /* Remove space for header */
+    height: calc(100vh - 60px); /* Adjust for header height */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ensure slides cover full height and width */
+.slide {
+    display: none; /* Hide all slides by default */
+    position: absolute; /* Use absolute positioning to cover header */
+    top: 0; /* Align the top of the slide with the top of the container */
+    left: 0;
+    right: 0;
+    height: 100%; /* Full height for each slide */
+    width: 100%; /* Full width for each slide */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Center and cover images */
+.center-image {
+    width: 100%; /* Ensure the image takes the full width */
+    height: 100%; /* Ensure the image takes the full height */
+    object-fit: cover; /* Cover the entire area without distortion */
+    position: relative; /* Ensure positioning is relative for better control */
+    z-index: 1; /* Ensure image is on top */
+}
+}
+
+.slide.active {
+    display: block; /* Show active slide */
+    opacity: 1; /* Fully visible */
+}
+
+.staff-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Add space between cards */
+    margin-top: 170px; /* Space below the header for staff cards */
+}
+
+.staff-card {
+    background: linear-gradient(145deg, #1F3F7E, #3A78); /* Dark blue gradient */
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px; /* Slightly increased width for a larger card */
+    text-align: center;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.5), -12px -12px 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for effects */
+    animation: slideIn 0.5s ease forwards; /* Updated animation */
+    opacity: 0; /* Ensure they start invisible */
+}
+
+/* Slide in animation for staff cards */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px); /* Start slightly below */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End in the original position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+.staff-card:hover {
+    transform: translateY(-5px) scale(1.05) rotate(2deg); /* Lift, scale, and rotate effect on hover */
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.6), -16px -16px 30px rgba(255, 255, 255, 0.1); /* Stronger shadow on hover */
+}
+
+.staff-card img {
+    width: 100px; /* Fixed size for uniformity */
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #00BFFF; /* Deep Sky Blue border around images */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.staff-card h3 {
+    font-size: 1.2em; /* Increase font size for the name */
+    color: #FFD700; /* Gold color for names */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+/* New styling for achieved sales */
+.achieved-sales {
+    background-color: rgba(0, 255, 127, 0.3); /* Light green background */
+    color: #fff; /* White text for contrast */
+    padding: 8px; /* More padding for better spacing */
+    border-radius: 5px; /* Slightly more rounded corners */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px; /* Space above the achieved sales */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+.achieved-sales:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+h1, h2 {
+    margin: 0;
+    color: #00BFFF; /* Deep Sky Blue for titles */
+}
+
+.center-text {
+    text-align: center; /* Center text in Slide 5 */
+    margin-top: 20%; /* Center vertically */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* New styling for current date */
+#current-date {
+    color: #FF69B4; /* Hot pink for the current date */
+    font-size: 1em; /* Reduced font size */
+}
+
+/* Hide the header and footer with animation */
+.header-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+}
+
+.footer-hidden {
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.star-container {
+    display: inline-block;
+    animation: pulse 1s infinite; /* Infinite pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Slightly increase size */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slide-up {
+    margin-bottom: 20px; /* Adjust this value as needed */
+    position: relative; /* Ensure positioning is relative for better control */
+    bottom: 10px; /* Move the image slightly up */
+}
+
+/* Slide-in animation for the table rows from the bottom */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start below the view */
+        opacity: 0; /* Initially transparent */
+    }
+    100% {
+        transform: translateY(0); /* Final position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Scroll effect for the table */
+@keyframes scrollEffect {
+    0% {
+        transform: translateY(100%); /* Start below the view */
+    }
+    100% {
+        transform: translateY(-100%); /* Scroll to above the view */
+    }
+}
+
+table {
+    width: 90%; /* Reduced width from 100% to 90% */
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table with top and bottom margins */
+    border-radius: 15px; /* Match the card's rounded corners */
+    overflow: hidden; /* Prevent overflow for rounded corners */
+    position: relative; /* Position relative for absolute children */
+    animation: scrollEffect 10s linear infinite; /* Continuous scroll effect */
+}
+
+tr {
+    animation: slideInFromBottom 0.5s ease forwards; /* Add slide-in effect */
+    opacity: 0; /* Initial opacity for fade-in */
+}
+
+/* Header styling remains unchanged */
+th {
+    background: linear-gradient(145deg, #1F3F7E, #3A78); /* Dark blue gradient for headers */
+    color: #fff; /* White text for contrast */
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase header text */
+    padding: 15px 30px; /* Padding for header cells */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for highlight */
+    border-bottom: 3px solid #007bff; /* Border for extra highlight */
+}
+
+td {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for cells */
+    padding: 15px 30px; /* Increased vertical and horizontal padding for cells */
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background for cells */
+    color: #fff; /* White text for contrast */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1); /* Soft dark background for even rows */
+}
+
+tr:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Light blue hover effect */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+td:hover {
+    color: #007bff; /* Change text color on hover */
+}
+
+tr td {
+    position: relative; /* Allow positioning of pseudo-elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+td::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: transparent; /* Initially transparent */
+    transition: background 0.3s ease; /* Transition for the line */
+}
+
+td:hover::after {
+    background: #007bff; /* Add blue color on hover */
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Existing styles... */
+
+/* Remove animations for the table in slides 10 and 11 */
+.slide:nth-of-type(8) .staff-container,
+.slide:nth-of-type(9) .staff-container,
+.slide:nth-of-type(10) .staff-container,
+.slide:nth-of-type(12) .staff-container,
+.slide:nth-of-type(11) .staff-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Optional: vertical centering */
+    animation: none; /* Disable animation */
+}
+
+/* Adjust the H1 positioning for slides 10 and 11 */
+.slide:nth-of-type(08) h1,
+.slide:nth-of-type(09) h1,
+.slide:nth-of-type(10) h1,
+.slide:nth-of-type(12) h1,
+.slide:nth-of-type(13) h1,
+.slide:nth-of-type(11) h1 {
+    margin-top: -180px; /* Move the H1 up further */
+}
+
+/* Center the text in the table for slides 10 and 11 */
+.slide:nth-of-type(08) table,
+.slide:nth-of-type(09) table, 
+.slide:nth-of-type(10) table,
+.slide:nth-of-type(11) table {
+    margin: 20px auto; /* Center the table and give it space above and below */
+    text-align: center; /* Center the text in the table */
+    margin-top: 30px; /* Adjust margin-top to give some space below H1 */
+}
+
+/* Add delay to the table animation */
+.slide:nth-of-type(08) table,
+.slide:nth-of-type(09) table,
+.slide:nth-of-type(10) table,
+.slide:nth-of-type(11) table {
+    animation: scrollEffect 10s linear infinite; /* Continuous scroll effect */
+    animation-delay: 10s; /* Hold for a few seconds before starting scroll */
+}
+.policy-container {
+    background: linear-gradient(145deg, #1F3F7E, #3A78B7);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 80%;
+    color: #fff;
+}
+
+.policy-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+
+.policy-container ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.policy-container ul li {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.policy-container ul li:hover {
+    transform: scale(1.05);
+    color: #FFD700; /* Gold on hover for emphasis */
+}
+
+.policy-container ul::marker {
+    color: #FFD700; /* Custom marker color */
+}
+/* Slide 14 Styling */
+/* Slide 14 Styling */
+#slide14 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background: linear-gradient(145deg, #0A0C1D, #1A1D30); /* Darker gradient background */
+    color: #F0F0F0; /* Light text color for contrast */
+    padding: 60px; /* Consistent padding */
+    box-sizing: border-box;
+    margin-top: px; /* Space from the top */
+}
+
+/* Employee Month Container */
+#slide14 .employee-month-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Increased gap for spacious layout */
+    background: rgba(40, 44, 60, 0.9); /* Darker, semi-transparent background */
+    padding: 50px; /* Increased padding for more space */
+    border-radius: 30px; /* Rounded corners for a softer look */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+    max-width: 1100px; /* Slightly increased max width */
+    width: 90%;
+    flex-wrap: wrap;
+    margin-left: auto; /* Center container horizontally */
+    margin-right: auto; /* Center container horizontally */
+margin-top: 60px; /* Adjust the value as needed */
+}
+
+/* Image Styles */
+#slide14 .employee-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px; /* Image container size */
+    height: 350px; /* Maintain square aspect ratio */
+    border-radius: 50%; /* Make the image container round */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    border: 6px solid rgba(255, 255, 255, 0.2); /* Outline around the image */
+}
+
+#slide14 .employee-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.5); /* Outline around the image */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Enhanced image shadow for a 3D effect */
+}
+
+/* Employee Details */
+#slide14 .employee-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Increased gap for better spacing */
+}
+
+#slide14 .employee-details h2 {
+    font-size: 3.2rem; /* Font size for the name */
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Clear font choice */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Pronounced shadow for better readability */
+}
+
+#slide14 .employee-details p {
+    font-size: 1.6rem; /* Font size for details */
+    margin: 5px 0;
+    font-family: 'Arial', sans-serif; /* Clear font choice */
+}
+
+/* Progress Bar */
+.progress-container {
+    position: relative; /* Set position to relative for positioning text */
+    margin-top: 20px; /* Space above the progress bar */
+    width: 100%;
+}
+
+#progressText {
+    position: absolute; /* Position text over the progress bar */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position */
+    color: white; /* Color for better visibility */
+    font-weight: bold; /* Make text bold */
+}
+
+#slide14 progress {
+    width: 100%;
+    height: 35px; /* Height for the progress bar */
+    border-radius: 20px; /* More rounded corners */
+    overflow: hidden;
+    appearance: none;
+}
+
+#slide14 progress::-webkit-progress-bar {
+    background-color: rgba(255, 255, 255, 0.2); /* Darker progress bar background */
+}
+
+#slide14 progress::-webkit-progress-value {
+    background: linear-gradient(145deg, #3A78B7, #1F3F7E); /* Gradient for progress value */
+    border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #slide14 {
+        padding: 30px; /* Adjusted padding for smaller screens */
+    }
+
+    #slide14 .employee-month-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px; /* Reduced padding for smaller screens */
+        margin-left: 15px; /* Equal padding on smaller screens */
+        margin-right: 15px; /* Equal padding on smaller screens */
+    }
+
+    #slide14 .employee-image {
+        width: 300px; /* Adjusted width for smaller screens */
+        height: 300px; /* Maintain aspect ratio */
+    }
+
+    #slide14 .employee-details h2 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+    }
+
+    #slide14 .employee-details p {
+        font-size: 1.4rem; /* Adjust for smaller screens */
+    }
+
+    #slide14 .progress-container {
+        margin-top: 10px; /* Less margin on smaller screens */
+    }
+}
+
+.staff-card {
+    border: 1px solid transparent; /* Default border */
+    transition: border 0.3s; /* Smooth transition for border change */
+}
+
+.staff-card.highest-progress {
+    border: 2px solid orange; /* Orange border for the highest progress */
+    background-color: rgba(255, 165, 0, 0.1); /* Light orange background for additional highlighting */
+}
+
+.star-container {
+    font-size: 1.5em; /* Adjust star size */
+}
+
+.star-container span {
+    color: orange; /* Color for the orange stars */
+}
+

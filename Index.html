@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Achievements Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-left">
+            <h1>Employee Achievements</h1>
+            <h2 id="current-date"></h2>
+        </div>
+        <div class="totals-box">
+            <h2>
+                Total Floor Sales: <span id="total-sale">9</span> / <span id="total-target">48</span>
+                &nbsp; | &nbsp; Total Deposit: USD <span id="total-deposit">3,613.50</span>
+            </h2>
+        </div>
+    </header>
+
+    <div id="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide" id="slide1">
+            <div class="staff-container"></div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <div class="staff-container"></div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <div class="staff-container"></div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="assets/Desktop Wallpaper NEW.jpg" class="center-image slide-up" alt="Desktop Wallpaper">
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="assets/S22.jpg" class="center-image slide-up" alt="Second Slide Image">
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide">
+            <img src="assets/Banner 3.jpg" class="center-image slide-up" alt="Banner 3 Image">
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide" id="slide5">
+            <div class="center-text">
+                <h1>Thank You for Your Hard Work!</h1>
+                <p>Your contributions are greatly appreciated.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide" id="slide8">
+            <div class="center-text">
+                <h1>Yesterday's Call Duration & Count</h1>
+                <div class="call-data-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Call Count</th>
+                                <th>Call Duration (min)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mailwaganam Niranjan</td><td>5</td><td>30</td></tr>
+                            <tr><td>Pushparaja Sathurshika</td><td>3</td><td>20</td></tr>
+                            <tr><td>Thangaras Dinushan</td><td>4</td><td>25</td></tr>
+                            <tr><td>Venujan Purusothaman</td><td>6</td><td>40</td></tr>
+                            <tr><td>Ramalingam Kushalini</td><td>2</td><td>15</td></tr>
+                            <tr><td>Karunasegar Sharmila</td><td>1</td><td>10</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="slide" id="slide9">
+            <div class="center-text">
+                <h1>Yesterday's Call Duration & Count (Continued)</h1>
+                <div class="call-data-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Call Count</th>
+                                <th>Call Duration (min)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Trainee 6</td><td>0</td><td>0</td></tr>
+                            <tr><td>Trainee 7</td><td>0</td><td>0</td></tr>
+                            <tr><td>Trainee 8</td><td>0</td><td>0</td></tr>
+                            <tr><td>Trainee 9</td><td>0</td><td>0</td></tr>
+                            <tr><td>Trainee 10</td><td>0</td><td>0</td></tr>
+                            <tr><td>Trainee 11</td><td>0</td><td>0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="slide" id="slide10">
+            <div class="center-text">
+                <h1>Last Month's Achievements</h1>
+                <div class="monthly-achievements-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Total Sales</th>
+                                <th>Total Deposit (USD)</th>
+                                <th>Pending Sales</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mailwaganam Niranjan</td><td>2</td><td>1,346.50</td><td>6</td></tr>
+                            <tr><td>Pushparaja Sathurshika</td><td>0</td><td>77.00</td><td>8</td></tr>
+                            <tr><td>Thangaras Dinushan</td><td>2</td><td>490.00</td><td>6</td></tr>
+                            <tr><td>Venujan Purusothaman</td><td>3</td><td>1,300.00</td><td>5</td></tr>
+                            <tr><td>Ramalingam Kushalini</td><td>1</td><td>200.00</td><td>7</td></tr>
+                            <tr><td>Karunasegar Sharmila</td><td>1</td><td>200.00</td><td>7</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12 -->
+        <div class="slide" id="slide12">
+            <div class="center-text">
+                <h1>Attention!</h1>
+                <p>Your contributions are greatly appreciated.</p>
+            </div>
+        </div>
+
+        <!-- Slide 13 -->
+        <div class="slide" id="slide13">
+            <div class="center-text">
+                <h1>Company Policies & Updates</h1>
+                <div class="policy-container">
+                    <ul>
+                        <li><strong>Work Hours:</strong> 9:00 AM - 6:00 PM.</li>
+                        <li><strong>Leave Policy:</strong> Request leave 3 days in advance.</li>
+                        <li><strong>Performance Reviews:</strong> November 15th.</li>
+                        <li><strong>Code of Conduct:</strong> Follow company standards.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14 -->
+        <div class="slide" id="slide14">
+            <div class="employee-month-container">
+                <div class="employee-image">
+                    <img src="assets/Venujan_Purusothaman.png" alt="Employee of the Month">
+                </div>
+                <div class="employee-details">
+                    <h2>Congratulations!</h2>
+                    <p>Name: Venujan Purusothaman</p>
+                    <p>Target: 8 Sales</p>
+                    <p>Number of Sales: 3</p>
+                    <p>Total Deposits: USD 1,300.00</p>
+                    <div class="progress-container">
+                        <progress id="salesProgress" value="0" max="100"></progress>
+                        <span id="progressText">0%</span> <!-- Placeholder for progress text -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>All rights reserved &copy; Grow More Solutions Pvt Ltd</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
