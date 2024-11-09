@@ -3,7 +3,7 @@ const staffData = [
     { name: "Mailwaganam Niranjan", target: 8, achievedSale: 2, deposit: 1346.50, image: "assets/Mailwaganam_Niranjan.png" },
     { name: "Pushparaja Sathurshika", target: 8, achievedSale: 2, deposit: 1407.00, image: "assets/Pushparaja_Sathurshika.png" },
     { name: "Thangaras Dinushan", target: 8, achievedSale: 2, deposit: 490.00, image: "assets/Thangaras_Dinushan.png" },
-    { name: "Venujan Purusothaman", target: 8, achievedSale: 3, deposit: 1300.00, image: "Venujan_Purusothaman.png" },
+    { name: "Venujan Purusothaman", target: 8, achievedSale: 3, deposit: 1300.00, image: "assets/Venujan_Purusothaman.png" },
     { name: "Ramalingam Kushalini", target: 8, achievedSale: 1, deposit: 200.00, image: "assets/Ramalingam_Kushalini.png" },
     { name: "Karunasegar Sharmila", target: 8, achievedSale: 1, deposit: 200.00, image: "assets/Karunasegar_Sharmila.png" },
     { name: "Trainee 6", target: 0, achievedSale: 0, deposit: 0.00, image: "assets/219983.png" },
